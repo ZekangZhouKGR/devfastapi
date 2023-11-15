@@ -25,6 +25,13 @@ def test_healthz(client):
     assert response.json() == {"message": "OK"}
 
 
+def test_greet_user(client):
+    """Test case for greet_user endpoint"""
+    response = client.get("/greet_user?name=Test")
+    assert response.status_code == 200
+    assert response.json() == {"message": "Hello, Test"}
+
+
 def test_all_endpoints_have_tests():
     from devfastapi import devfastapi
 
