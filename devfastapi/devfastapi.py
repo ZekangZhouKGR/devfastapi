@@ -15,3 +15,8 @@ async def root():
 @app.get("/healthz")
 async def healthz():
     return {"message": "OK"}
+
+
+@app.get("/greet_user")
+async def greet_user(name: str):
+    return {"message": f"Hello, {name}"}
